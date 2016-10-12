@@ -26,6 +26,19 @@ func main() {
 
 }
 
-func trecimate(n int) {
-	fmt.Println("Replace this to get the required output")
+func trecimate(n int) (result int) {
+	if n<3 {
+		fmt.Printf("Have %d, stopping\n", n)
+		result = n
+	} else if (n%3==1) {
+		fmt.Printf("Have %d, adding 1\n", n)
+		result = trecimate((n+1)/3)
+	} else if (n%3==2) {
+		fmt.Printf("Have %d, adding -1\n", n)
+		result = trecimate((n-1)/3)
+	} else {
+		fmt.Printf("Have %d, adding 0\n", n)
+		result = trecimate(n/3)
+	}
+	return
 }
