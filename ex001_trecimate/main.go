@@ -31,11 +31,11 @@ func trecimate(n int) (result int) {
 		fmt.Printf("Have %d, stopping\n", n)
 		result = n
 	} else if (n%3==1) {
-		fmt.Printf("Have %d, adding 1\n", n)
-		result = trecimate((n+1)/3)
-	} else if (n%3==2) {
 		fmt.Printf("Have %d, adding -1\n", n)
 		result = trecimate((n-1)/3)
+	} else if (n%3==2) {
+		fmt.Printf("Have %d, adding 1\n", n)
+		result = trecimate((n+1)/3)
 	} else {
 		fmt.Printf("Have %d, adding 0\n", n)
 		result = trecimate(n/3)
